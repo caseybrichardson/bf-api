@@ -1,0 +1,9 @@
+DROP TABLE IF EXISTS submission;
+
+CREATE TABLE submission(
+  id INTEGER PRIMARY KEY AUTOINCREMENT,
+  source TEXT NOT NULL,
+  output TEXT NOT NULL,
+  accepted TINYINT DEFAULT 0,
+  tstamp INTEGER NOT NULL
+);
