@@ -1,4 +1,4 @@
-from bf import BFEvaluator
+from brainfuckterpreter.bf import BFEvaluator
 
 import xml.sax.saxutils as saxutils
 
@@ -21,14 +21,14 @@ app = get_app()
 '''
 
 def execute_bf_code(code):
-    evaluator = BFEvaluator()
+    evaluator = BFEvaluator(interactive=False)
 
     try:
-        success, output = evaluator.evaluate(code)
+        result = evaluator.evaluate(code)
     except Exception:
         return (False, '')
     else:
-        return (success, output)
+        return (True, result.output)
 
 '''
     Response Utils
